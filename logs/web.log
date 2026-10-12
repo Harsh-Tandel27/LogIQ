@@ -1,0 +1,53 @@
+
+> frontend@0.1.0 start
+> next start -p 3000
+
+▲ Next.js 16.3.6
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.105:3000
+✓ Ready in 87ms
+✓ Running next.config.ts took 20ms
+Failed to proxy http://localhost:8000/api/simulator AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:8000
+        at <unknown> (Error: connect ECONNREFUSED ::1:8000) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 8000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:8000
+        at <unknown> (Error: connect ECONNREFUSED ::1:8000) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 8000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  ]
+}

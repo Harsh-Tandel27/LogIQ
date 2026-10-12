@@ -1,0 +1,130 @@
+.venv/bin/python -m spark.stream
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/12 22:27:08 WARN Utils: Your hostname, Harshs-MacBook-Pro.local, resolves to a loopback address: 127.0.0.1; using 192.168.0.105 instead (on interface en0)
+26/10/12 22:27:08 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+:: loading settings :: url = jar:file:/Users/harshtandel27/Desktop/mini-projects/BDA/.venv/lib/python3.13/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/harshtandel27/.ivy2.5.2/cache
+The jars for the packages stored in: /Users/harshtandel27/.ivy2.5.2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.13 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-10e39543-752c-4cb2-b9fb-864a2abd8a99;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.13;4.0.1 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.0.1 in central
+	found org.apache.kafka#kafka-clients;3.9.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.7 in central
+	found org.slf4j#slf4j-api;2.0.16 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.4.1 in central
+	found org.apache.hadoop#hadoop-client-api;3.4.1 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 in central
+	found org.apache.commons#commons-pool2;2.12.0 in central
+:: resolution report :: resolve 187ms :: artifacts dl 4ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	org.apache.commons#commons-pool2;2.12.0 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.4.1 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.4.1 from central in [default]
+	org.apache.kafka#kafka-clients;3.9.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.13;4.0.1 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.0.1 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.16 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.7 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   11  |   0   |   0   |   0   ||   11  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-10e39543-752c-4cb2-b9fb-864a2abd8a99
+	confs: [default]
+	0 artifacts copied, 11 already retrieved (0kB/3ms)
+26/10/12 22:27:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/12 22:27:12 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/12 22:27:12 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-1,115875,0), (logs-2,81355,0), (logs-0,54175,0))
+26/10/12 22:27:12 WARN KafkaOffsetReaderAdmin: Retrying to fetch latest offsets because of incorrect offsets
+26/10/12 22:27:13 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-1,115875,0), (logs-2,81355,0), (logs-0,54175,0))
+26/10/12 22:27:13 WARN KafkaOffsetReaderAdmin: Retrying to fetch latest offsets because of incorrect offsets
+26/10/12 22:27:14 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[stream] archive -> HDFS and alerts -> MongoDB running. Ctrl+C to stop.
+26/10/12 22:27:14 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-0,55142,0), (logs-2,82971,0), (logs-1,117872,0))
+26/10/12 22:27:14 WARN KafkaOffsetReaderAdmin: Retrying to fetch latest offsets because of incorrect offsets
+26/10/12 22:27:14 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-1,115875,0), (logs-2,81355,0), (logs-0,54175,0))
+26/10/12 22:27:15 WARN KafkaMicroBatchStream: Partition logs-1's offset was changed from 115875 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:15 WARN KafkaMicroBatchStream: Partition logs-2's offset was changed from 81355 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:15 WARN KafkaMicroBatchStream: Partition logs-0's offset was changed from 54175 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:15 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-0,55142,0), (logs-2,82971,0), (logs-1,117872,0))
+26/10/12 22:27:15 WARN KafkaOffsetReaderAdmin: Retrying to fetch latest offsets because of incorrect offsets
+26/10/12 22:27:16 WARN KafkaOffsetReaderAdmin: Found incorrect offsets in some partitions (partition, previous offset, fetched offset): List((logs-0,55142,0), (logs-2,82971,0), (logs-1,117872,0))
+26/10/12 22:27:16 WARN KafkaMicroBatchStream: Partition logs-0's offset was changed from 55142 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:16 WARN KafkaMicroBatchStream: Partition logs-2's offset was changed from 82971 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:16 WARN KafkaMicroBatchStream: Partition logs-1's offset was changed from 117872 to 0, some data may have been missed. 
+Some data may have been lost because they are not available in Kafka any more; either the
+ data was aged out by Kafka or the topic may have been deleted before all the data in the
+ topic was processed. If you want your streaming query to fail on such cases, set the source
+ option "failOnDataLoss" to "true".
+    
+26/10/12 22:27:32 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+[batch 710] received=240 bloom_dropped=238 errors=2 templates=2 alerts +2 ~0 (2450ms)
+[batch 711] received=560 bloom_dropped=555 errors=5 templates=5 alerts +5 ~0 (559ms)
+[batch 712] received=560 bloom_dropped=552 errors=8 templates=8 alerts +8 ~0 (434ms)
+[batch 713] received=2756 bloom_dropped=516 errors=2240 templates=18 alerts +15 ~2 (525ms)
+[batch 714] received=3126 bloom_dropped=565 errors=2561 templates=18 alerts +7 ~10 (794ms)
+[batch 715] received=560 bloom_dropped=554 errors=6 templates=6 alerts +5 ~1 (431ms)
+[batch 716] received=560 bloom_dropped=555 errors=5 templates=5 alerts +4 ~1 (512ms)
+[batch 717] received=560 bloom_dropped=555 errors=5 templates=5 alerts +3 ~2 (519ms)
+[batch 718] received=560 bloom_dropped=550 errors=10 templates=9 alerts +3 ~6 (485ms)
+[batch 719] received=540 bloom_dropped=534 errors=6 templates=6 alerts +3 ~3 (384ms)
+[batch 720] received=560 bloom_dropped=555 errors=5 templates=5 alerts +4 ~1 (578ms)
+[batch 721] received=580 bloom_dropped=576 errors=4 templates=4 alerts +0 ~4 (438ms)
+[batch 722] received=540 bloom_dropped=535 errors=5 templates=5 alerts +1 ~4 (446ms)
+[batch 723] received=580 bloom_dropped=573 errors=7 templates=6 alerts +0 ~6 (440ms)
+[batch 724] received=560 bloom_dropped=558 errors=2 templates=2 alerts +1 ~1 (520ms)
+[batch 725] received=560 bloom_dropped=551 errors=9 templates=7 alerts +4 ~3 (372ms)
+[batch 726] received=560 bloom_dropped=548 errors=12 templates=11 alerts +4 ~7 (421ms)
+[batch 727] received=560 bloom_dropped=556 errors=4 templates=4 alerts +0 ~4 (327ms)
+[batch 728] received=560 bloom_dropped=554 errors=6 templates=5 alerts +1 ~4 (392ms)
+[batch 729] received=560 bloom_dropped=555 errors=5 templates=5 alerts +2 ~3 (414ms)
+[batch 730] received=560 bloom_dropped=556 errors=4 templates=4 alerts +2 ~2 (417ms)
+[batch 731] received=560 bloom_dropped=553 errors=7 templates=6 alerts +0 ~6 (387ms)
+[batch 732] received=580 bloom_dropped=570 errors=10 templates=10 alerts +3 ~7 (380ms)
+[batch 733] received=560 bloom_dropped=558 errors=2 templates=2 alerts +0 ~2 (316ms)
+[batch 734] received=560 bloom_dropped=557 errors=3 templates=3 alerts +1 ~2 (584ms)
+[batch 735] received=560 bloom_dropped=555 errors=5 templates=4 alerts +0 ~4 (453ms)
+[batch 736] received=560 bloom_dropped=556 errors=4 templates=4 alerts +0 ~4 (510ms)
+[batch 737] received=560 bloom_dropped=557 errors=3 templates=3 alerts +1 ~2 (430ms)
+[batch 738] received=560 bloom_dropped=553 errors=7 templates=7 alerts +2 ~5 (512ms)
+[batch 739] received=580 bloom_dropped=576 errors=4 templates=4 alerts +1 ~3 (454ms)
+[batch 740] received=320 bloom_dropped=317 errors=3 templates=3 alerts +0 ~3 (948ms)
+make: *** [stream] Terminated: 15

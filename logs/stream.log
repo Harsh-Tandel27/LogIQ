@@ -1,0 +1,71 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/09/29 02:15:36 WARN Utils: Your hostname, Harshs-MacBook-Pro.local, resolves to a loopback address: 127.0.0.1; using 192.168.0.105 instead (on interface en0)
+26/09/29 02:15:36 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+:: loading settings :: url = jar:file:/Users/harshtandel27/Desktop/mini-projects/BDA/.venv/lib/python3.13/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/harshtandel27/.ivy2.5.2/cache
+The jars for the packages stored in: /Users/harshtandel27/.ivy2.5.2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.13 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-518d0f17-3264-49cc-9132-bd05a738b07d;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.13;4.0.1 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.0.1 in central
+	found org.apache.kafka#kafka-clients;3.9.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.7 in central
+	found org.slf4j#slf4j-api;2.0.16 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.4.1 in central
+	found org.apache.hadoop#hadoop-client-api;3.4.1 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 in central
+	found org.apache.commons#commons-pool2;2.12.0 in central
+:: resolution report :: resolve 236ms :: artifacts dl 8ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	org.apache.commons#commons-pool2;2.12.0 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.4.1 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.4.1 from central in [default]
+	org.apache.kafka#kafka-clients;3.9.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.13;4.0.1 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.0.1 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.16 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.7 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   11  |   0   |   0   |   0   ||   11  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-518d0f17-3264-49cc-9132-bd05a738b07d
+	confs: [default]
+	0 artifacts copied, 11 already retrieved (0kB/4ms)
+26/09/29 02:15:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/29 02:15:40 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/09/29 02:15:42 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[stream] archive -> HDFS and alerts -> MongoDB running. Ctrl+C to stop.
+26/09/29 02:19:54 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+[batch 277] received=340 bloom_dropped=339 errors=1 templates=1 alerts +1 ~0 (2969ms)
+26/09/29 02:19:54 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 3000} milliseconds, but spent 3423 milliseconds
+[batch 278] received=660 bloom_dropped=654 errors=6 templates=6 alerts +6 ~0 (746ms)
+[batch 279] received=500 bloom_dropped=493 errors=7 templates=7 alerts +6 ~1 (617ms)
+[batch 280] received=600 bloom_dropped=594 errors=6 templates=6 alerts +4 ~2 (670ms)
+[batch 281] received=560 bloom_dropped=554 errors=6 templates=5 alerts +3 ~2 (623ms)
+[batch 282] received=600 bloom_dropped=592 errors=8 templates=8 alerts +5 ~3 (470ms)
+[batch 283] received=560 bloom_dropped=556 errors=4 templates=4 alerts +3 ~1 (433ms)
+[batch 284] received=600 bloom_dropped=593 errors=7 templates=7 alerts +4 ~3 (670ms)
+[batch 285] received=580 bloom_dropped=575 errors=5 templates=5 alerts +2 ~3 (463ms)
+[batch 286] received=580 bloom_dropped=573 errors=7 templates=7 alerts +5 ~2 (402ms)
+[batch 287] received=580 bloom_dropped=571 errors=9 templates=9 alerts +3 ~6 (508ms)
+[batch 288] received=580 bloom_dropped=573 errors=7 templates=7 alerts +5 ~2 (503ms)
+[batch 289] received=580 bloom_dropped=572 errors=8 templates=8 alerts +5 ~3 (440ms)
+[batch 290] received=580 bloom_dropped=575 errors=5 templates=5 alerts +2 ~3 (601ms)
+[batch 291] received=460 bloom_dropped=456 errors=4 templates=4 alerts +2 ~2 (1275ms)
+[batch 292] received=460 bloom_dropped=443 errors=17 templates=14 alerts +5 ~9 (1128ms)
+[batch 293] received=420 bloom_dropped=391 errors=29 templates=24 alerts +6 ~18 (1562ms)
+[batch 294] received=8806 bloom_dropped=0 errors=8806 templates=11 alerts +11 ~0 (2266ms)
+[batch 295] received=8806 bloom_dropped=0 errors=8806 templates=11 alerts +0 ~11 (2436ms)

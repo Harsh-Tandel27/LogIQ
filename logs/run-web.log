@@ -1,0 +1,16 @@
+cd frontend && npm run dev
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.105:3000
+✓ Ready in 362ms
+✓ Running next.config.ts took 697ms
+
+ GET / 307 in 295ms (next.js: 134ms, application-code: 162ms)
+ GET /dashboard 200 in 118ms (next.js: 32ms, application-code: 86ms)
+ GET /incident/INC-1013 200 in 428ms (next.js: 394ms, application-code: 34ms)
+ GET /simulate 200 in 27ms (next.js: 12ms, application-code: 15ms)
+[?25h

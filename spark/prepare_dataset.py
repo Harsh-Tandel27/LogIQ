@@ -24,9 +24,10 @@ MAX_PER_TEMPLATE copies of each (source, template, severity). The fold column ha
 template's first words, so evaluation can hold out whole message families the model has
 never seen.
 
-    python -m spark.prepare_dataset        # downloads ~70 MB once, writes data/severity_dataset
+    python -m spark.prepare_dataset        # uses data/loghub, or downloads ~70 MB from Zenodo first
 """
 
+import gzip
 import json
 import shutil
 import tarfile
@@ -66,16 +67,24 @@ def download(raw_dir: Path) -> None:
             with tarfile.open(archive) as t:
                 t.extractall(target, filter="data")
         archive.unlink()
+    # BGL.log is 709 MB, over GitHub's 100 MB file limit. Gzipped it is 55 MB, and Spark reads .gz directly.
+    bgl = raw_dir / "BGL" / "BGL.log"
+    if bgl.exists():
+        with open(bgl, "rb") as src, gzip.open(f"{bgl}.gz", "wb", compresslevel=9) as dst:
+            shutil.copyfileobj(src, dst)
+        bgl.unlink()
 
 
 def _parse(spark, path: str, pattern: str, fields: dict[str, int]) -> DataFrame:
-    lines = spark.read.text(local_uri(path))
+    # Expand globs here: Spark logs a FileNotFoundException stack trace for glob paths.
+    files = sorted(Path("/").glob(path.lstrip("/")))
+    lines = spark.read.text([local_uri(str(f)) for f in files])
     cols = [F.regexp_extract("value", pattern, idx).alias(name) for name, idx in fields.items()]
     return lines.select(*cols).filter(F.col("message") != "")
 
 
 def parse_all(spark, raw: Path) -> DataFrame:
-    bgl = _parse(spark, f"{raw}/BGL/BGL.log",
+    bgl = _parse(spark, f"{raw}/BGL/BGL.log.gz",
                  r"^(\S+) \S+ \S+ \S+ \S+ \S+ \S+ \S+ (\S+) (.*)$",
                  {"alert": 1, "level": 2, "message": 3}).withColumn("source", F.lit("BGL"))
     others = [

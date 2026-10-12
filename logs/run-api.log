@@ -1,0 +1,20 @@
+.venv/bin/uvicorn api.main:app --port 8000
+INFO:     Started server process [65799]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50670 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50677 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50685 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50689 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50691 - "GET /api/components HTTP/1.1" 200 OK
+2026-10-12 22:27:48,195 logiq.slack WARNING SLACK_WEBHOOK_URL not set, Slack message not sent:
+:red_circle: *High incident INC-1013*: root cause is *OrderDB*
+2026-10-12 22:27:48,195 logiq.correlator INFO Opened INC-1013: root cause OrderDB, 4782 logs
+INFO:     127.0.0.1:50878 - "GET /api/incidents/INC-1013 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50883 - "GET /api/incidents/INC-1013 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [65799]
+make: *** [api] Terminated: 15

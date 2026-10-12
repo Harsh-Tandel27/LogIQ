@@ -1,0 +1,22 @@
+.venv/bin/python -m producer.logger --crash OrderDB --crash-size 2000 --duration 90
+[logger] OrderDB will crash in 10s
+[logger] streaming ~200 logs/s to logs. Type a service name + Enter to crash it.
+[logger] 960 logs sent
+[crash] OrderDB failed: pushed 4782 error logs across 5 services
+[logger] 6662 logs sent
+[logger] 7622 logs sent
+[logger] 8562 logs sent
+[logger] 9502 logs sent
+[logger] 10442 logs sent
+[logger] 11382 logs sent
+[logger] 12342 logs sent
+[logger] 13282 logs sent
+[logger] 14222 logs sent
+[logger] 15162 logs sent
+[logger] 16102 logs sent
+[logger] 17062 logs sent
+[logger] 18002 logs sent
+[logger] 18962 logs sent
+[logger] 19902 logs sent
+[logger] 20862 logs sent
+[logger] done, 21602 logs sent

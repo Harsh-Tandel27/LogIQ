@@ -1,0 +1,6 @@
+[logger] streaming ~150 logs/s to logs. Type a service name + Enter to crash it.
+[logger] 735 logs sent
+[logger] 1455 logs sent
+[logger] 2175 logs sent
+[logger] stopped from the dashboard
+[logger] done, 2550 logs sent
