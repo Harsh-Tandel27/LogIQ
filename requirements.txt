@@ -1,0 +1,11 @@
+pyspark==4.0.1
+kafka-python-ng>=2.2
+pymongo>=4.8
+neo4j>=5.20
+fastapi>=0.115
+uvicorn[standard]>=0.30
+requests>=2.32
+scikit-learn>=1.5
+numpy>=1.26
+psutil>=5.9
+pytest>=8

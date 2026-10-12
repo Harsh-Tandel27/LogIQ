@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+build/
+checkpoints/
+logs/
+models/
+spark-warehouse/
+metastore_db/
+derby.log
+data/loghub/
+data/severity_dataset/
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,37 @@
+{
+  "citation": "Zhu et al., Loghub, ISSRE 2023, doi:10.5281/zenodo.8196385",
+  "labelled_lines": 1111321,
+  "rows_after_cap": 75020,
+  "templates": 1382,
+  "max_per_template": 300,
+  "labelled_by_source": {
+    "Apache/Low": 168,
+    "Apache/Medium": 38081,
+    "BGL/High": 348460,
+    "BGL/Low": 23357,
+    "BGL/Medium": 639480,
+    "Hadoop/High": 17,
+    "Hadoop/Low": 11438,
+    "Hadoop/Medium": 521,
+    "OpenStack/High": 2,
+    "OpenStack/Low": 3118,
+    "OpenStack/Medium": 186,
+    "Zookeeper/Low": 45876,
+    "Zookeeper/Medium": 617
+  },
+  "kept_by_source": {
+    "Apache/Low": 168,
+    "Apache/Medium": 9463,
+    "BGL/High": 8438,
+    "BGL/Low": 4187,
+    "BGL/Medium": 48288,
+    "Hadoop/High": 17,
+    "Hadoop/Low": 943,
+    "Hadoop/Medium": 341,
+    "OpenStack/High": 2,
+    "OpenStack/Low": 359,
+    "OpenStack/Medium": 186,
+    "Zookeeper/Low": 2301,
+    "Zookeeper/Medium": 327
+  }
+}

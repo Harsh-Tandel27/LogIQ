@@ -1,0 +1,34 @@
+{
+  "services": [
+    {"name": "WebFrontend",    "kind": "client",   "tier": 0},
+    {"name": "MobileApp",      "kind": "client",   "tier": 0},
+    {"name": "APIGateway",     "kind": "gateway",  "tier": 1},
+    {"name": "AuthAPI",        "kind": "api",      "tier": 2},
+    {"name": "OrderAPI",       "kind": "api",      "tier": 2},
+    {"name": "SearchAPI",      "kind": "api",      "tier": 2},
+    {"name": "PaymentAPI",     "kind": "api",      "tier": 3},
+    {"name": "InventoryAPI",   "kind": "api",      "tier": 3},
+    {"name": "UserDB",         "kind": "db",       "tier": 4},
+    {"name": "SessionCache",   "kind": "cache",    "tier": 4},
+    {"name": "OrderDB",        "kind": "db",       "tier": 4},
+    {"name": "InventoryDB",    "kind": "db",       "tier": 4},
+    {"name": "SearchIndex",    "kind": "search",   "tier": 4},
+    {"name": "PaymentGateway", "kind": "external", "tier": 4}
+  ],
+  "depends_on": [
+    ["WebFrontend",  "APIGateway"],
+    ["MobileApp",    "APIGateway"],
+    ["APIGateway",   "AuthAPI"],
+    ["APIGateway",   "OrderAPI"],
+    ["APIGateway",   "SearchAPI"],
+    ["AuthAPI",      "UserDB"],
+    ["AuthAPI",      "SessionCache"],
+    ["OrderAPI",     "AuthAPI"],
+    ["OrderAPI",     "PaymentAPI"],
+    ["OrderAPI",     "InventoryAPI"],
+    ["OrderAPI",     "OrderDB"],
+    ["PaymentAPI",   "PaymentGateway"],
+    ["InventoryAPI", "InventoryDB"],
+    ["SearchAPI",    "SearchIndex"]
+  ]
+}

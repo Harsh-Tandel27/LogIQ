@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* Light theme only. */
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --sunken: #f0f2f5;
+  --ink: #1d2433;
+  --ink-2: #4e5968;
+  --ink-3: #7a8494;
+  --rule: #e2e6eb;
+  --rule-strong: #cbd2da;
+  --brand: #0e6e6e;
+  --brand-wash: #e3f2f1;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --crit: #c4291c;
+  --crit-wash: #fdecea;
+  --warn: #a15c07;
+  --warn-wash: #fff4e0;
+  --good: #1f7a4a;
+  --good-wash: #e6f4ec;
+  /* Kept for components that still reference the old names. */
+  --paper: var(--bg);
+  --link: var(--brand);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-paper: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-brand: var(--brand);
+  --color-brand-wash: var(--brand-wash);
+  --color-crit: var(--crit);
+  --color-crit-wash: var(--crit-wash);
+  --color-warn: var(--warn);
+  --color-warn-wash: var(--warn-wash);
+  --color-good: var(--good);
+  --color-good-wash: var(--good-wash);
+  --color-link: var(--brand);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-feature-settings: "tnum" 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* The failing root-cause node pulses. Nothing else on the page moves on its own. */
+@keyframes root-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--crit) 50%, transparent); }
+  70% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--crit) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--crit) 0%, transparent); }
+}
+.root-pulse { animation: root-pulse 1.6s ease-out infinite; }
+
+@keyframes live-dot {
+  50% { opacity: 0.35; }
+}
+.live-dot { animation: live-dot 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .root-pulse { animation: none; box-shadow: 0 0 0 4px color-mix(in srgb, var(--crit) 35%, transparent); }
+  .live-dot { animation: none; }
+}
+
+.react-flow__attribution { display: none; }
+.graph-clickable .react-flow__node { cursor: pointer; }
+
+/* Dense data tables used across the app. */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-3);
+  font-size: 12px;
+  padding: 6px 12px;
+  background: var(--sunken);
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.data-table td { padding: 7px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.data-table tbody tr:last-child td { border-bottom: 0; }
+.data-table tbody tr:hover td { background: #fafbfc; }
+.data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
